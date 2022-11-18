@@ -1,0 +1,49 @@
+name: flutter_local_notification
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # This is an asset repo containing the default set of icon assets used by Flutter's Cupertino widgets.
+  cupertino_icons: ^1.0.2
+
+  # A cross platform plugin for displaying local notifications.
+  flutter_local_notifications: ^9.6.0
+
+  # This package provides the IANA time zone database and time zone aware DateTime class, TZDateTime.
+  timezone: ^0.8.0
+
+  # RxDart extends the capabilities of Dart Streams and StreamControllers.
+  rxdart: ^0.27.4
+
+  # A Flutter plugin to use the Firebase Core API, which enables connecting to multiple Firebase apps.
+  firebase_core: ^2.2.0
+
+  # A Flutter plugin to use the Firebase Cloud Messaging API.
+  firebase_messaging: ^14.1.0
+  # MobX is a state-management library that makes it simple to connect the reactive data of your application with the UI. This wiring is completely automatic and feels very natural. As the application-developer, you focus purely on what reactive-data needs to be consumed in the UI (and elsewhere) without worrying about keeping the two in sync.
+  mobx: ^2.0.7
+  # A wrapper around InheritedWidget to make them easier to use and more reusable
+  provider: ^6.0.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # This package contains a recommended set of lints for Flutter apps, packages, and plugins to encourage good coding practices.
+  flutter_lints: ^1.0.4
+
+  # The build_runner package provides a concrete way of generating files using Dart code, outside of tools like pub. Unlike pub serve/build, files are always generated directly on disk, and rebuilds are incremental - inspired by tools such as Bazel.
+  build_runner: ^2.0.0
+
+flutter:
+
+  uses-material-design: true

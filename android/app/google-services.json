@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "595043713299",
+    "project_id": "com-dms-test-ghdc",
+    "storage_bucket": "com-dms-test-ghdc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595043713299:android:0bebc14d816450cda25ae6",
+        "android_client_info": {
+          "package_name": "com.example.flutter_local_notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595043713299-lfu6nlgbl0ep2kem8t7159gbesn1kf5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1o5PYwYHRVx3mZubzsswTBUAHKgBuzBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595043713299-lfu6nlgbl0ep2kem8t7159gbesn1kf5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
