@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_local_notification/store/firebase_store.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -8,34 +12,61 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  late FirebaseStore _firebaseStore;
+
   @override
   void initState() {
     super.initState();
   }
 
   @override
+  void didChangeDependencies(){
+    super.didChangeDependencies();
+    _firebaseStore = Provider.of<FirebaseStore>(context);
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chú Lính Chì'),
+        title: const Text('Push Notification Using FCM'),
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.all(24.0),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Flexible(
-                  child: Text("Đã là bộ đội thì đâu cũng là chiến trường.",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 15)),
+      body: Observer(
+        builder: (context){
+          return SafeArea(
+            child: Padding(
+                padding: const EdgeInsets.all(24.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround ,
+                  children:  [
+                    Flexible(
+                      child: Text("Designed by LinhVQ.",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18)),
+                    ),
+                    SizedBox(height: 30),
+                    Flexible(
+                      child: Text("${_firebaseStore.tokenDevice ?? ""}",
+                          style: TextStyle(
+                              fontWeight: FontWeight.normal, fontSize: 15)),
+                    )
+
+
+                  ],
                 )
-              ],
             ),
-          )
-        ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: ()  {
+          Clipboard.setData(ClipboardData(text: _firebaseStore.tokenDevice ?? ""));
+        },
+        icon: const Icon(Icons.token),
+        label: const Text("Copy Token"),
+        backgroundColor: Colors.blue,
       ),
     );
   }

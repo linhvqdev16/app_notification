@@ -33,6 +33,10 @@ dependencies:
   mobx: ^2.0.7
   # A wrapper around InheritedWidget to make them easier to use and more reusable
   provider: ^6.0.4
+  # Provides the Observer widget that listens to observables and automatically rebuilds on changes.
+  flutter_mobx: ^2.0.6+5
+  # Wraps platform-specific persistent storage for simple data (NSUserDefaults on iOS and macOS, SharedPreferences on Android, etc.). Data may be persisted to disk asynchronously, and there is no guarantee that writes will be persisted to disk after returning, so this plugin must not be used for storing critical data.
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +47,9 @@ dev_dependencies:
 
   # The build_runner package provides a concrete way of generating files using Dart code, outside of tools like pub. Unlike pub serve/build, files are always generated directly on disk, and rebuilds are incremental - inspired by tools such as Bazel.
   build_runner: ^2.0.0
+
+  # Adds support for annotating your MobX code with @observable, @computed, @action, making it super simple to use MobX.
+  mobx_codegen: ^2.0.1+2
 
 flutter:
 
